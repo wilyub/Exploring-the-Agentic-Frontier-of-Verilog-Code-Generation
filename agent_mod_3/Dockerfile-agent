@@ -1,0 +1,5 @@
+FROM cvdp-agent-mod-3-base
+WORKDIR /app
+RUN mkdir -p /code && chmod 777 /code
+COPY agent.py .
+ENTRYPOINT ["/app/venv/bin/python3", "/app/agent.py"]
