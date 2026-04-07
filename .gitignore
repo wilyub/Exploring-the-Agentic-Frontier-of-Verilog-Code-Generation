@@ -27,3 +27,5 @@ tooling_agentic*/
 tooling*/
 tools/*
 tooling_agentic*
+analyze_benchmark.py
+compare_benchmark_results.py

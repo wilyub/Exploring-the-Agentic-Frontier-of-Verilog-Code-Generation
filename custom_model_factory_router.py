@@ -27,7 +27,7 @@ if current_dir not in sys.path:
 from src.llm_lib.model_factory import ModelFactory
 from src.config_manager import config
 from openrouter_models import GPT_Instance, Claude_Instance, Gemini_Instance, OpenRouter_Instance
-from examples.subjective_score_model import SubjectiveScoreModel_Instance
+from subjective_score_model import SubjectiveScoreModel_Instance
 
 
 class CustomModelFactory(ModelFactory):
@@ -90,8 +90,8 @@ class CustomModelFactory(ModelFactory):
         return OpenRouter_Instance(context=context, key=key, model=model_name)
 
     def _create_sbj_score_instance(self, model_name: str, context: Any, key: Optional[str], **kwargs) -> Any:
-        """Create a subjective scoring model instance."""
-        return SubjectiveScoreModel_Instance(context=context, key=key, model=model_name)
+        """Create a subjective scoring model instance using a fixed Gemini judge model."""
+        return SubjectiveScoreModel_Instance(context=context, key=key, model="gemini-3.1-pro-preview")
 
 
 if __name__ == "__main__":
