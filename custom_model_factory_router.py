@@ -64,6 +64,9 @@ class CustomModelFactory(ModelFactory):
         self.model_types["qwen/qwen3-max-thinking"] = self._create_openrouter_instance
         self.model_types["z-ai/glm-5"] = self._create_openrouter_instance
         self.model_types["z-ai/glm-4.7"] = self._create_openrouter_instance
+        self.model_types["anthropic/claude-sonnet-4.6"] = self._create_openrouter_instance
+        self.model_types["anthropic/claude-opus-4.6"] = self._create_openrouter_instance
+        self.model_types["openai/gpt-5.3-codex"] = self._create_openrouter_instance
 
         # Register subjective scoring model
         self.model_types["sbj_score"] = self._create_sbj_score_instance
